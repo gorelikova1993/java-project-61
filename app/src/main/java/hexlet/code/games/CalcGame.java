@@ -44,8 +44,7 @@ public class CalcGame {
                 attempts++;
             } else {
                 rightAnsw = false;
-                System.out.println(playerAnsw + " is wrong answer ;(. Correct answer was " + exp +  ".");
-                Engine.againMessage();
+                Engine.againMessage(exp, playerAnsw);
             }
         }
     }

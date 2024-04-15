@@ -17,12 +17,16 @@ public class Engine {
 
     public static int returnAnswer() {
         Scanner scanner = new Scanner(System.in);
-        int answ = scanner.nextInt();
-        return answ;
+        return scanner.nextInt();
     }
-//TODO add mes(is wrong answ correct bla bla)
-    public static void againMessage() {
+
+    public static void againMessage(int rightAnsw, int badAnsw) {
+        System.out.println("'" + badAnsw + "' is wrong answer ;(. Correct answer was '" + rightAnsw + "'.");
         System.out.println("Let's try again, " + name + "!");
+    }
+
+    public static int rnd(int min, int max) {
+        return min + (int) (Math.random() * ((max - min) + 1));
     }
 
 }

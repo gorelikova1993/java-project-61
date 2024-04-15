@@ -26,8 +26,7 @@ public class GCDGame {
                 attempts++;
             } else {
                 rightAnsw = false;
-                System.out.println(playerAnsw + " is wrong answer ;(. Correct answer was " + playerAnsw);
-                Engine.againMessage();
+                Engine.againMessage(rightGcd, playerAnsw);
             }
 
         }
