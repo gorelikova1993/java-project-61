@@ -39,7 +39,7 @@ public class CalcGame {
             int playerAnsw = Engine.returnAnswer();
 
 
-            if(playerAnsw == exp) {
+            if (playerAnsw == exp) {
                 System.out.println("Correct!");
                 attempts++;
             } else {
