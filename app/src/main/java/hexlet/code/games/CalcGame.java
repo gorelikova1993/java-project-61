@@ -2,7 +2,10 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import static hexlet.code.Engine.correctAnsw;
+
 public class CalcGame {
+
 
     public static void startGame() {
         Engine.greetings();
@@ -12,9 +15,9 @@ public class CalcGame {
         var symbol = "";
         int exp = 0;
 
-        while (rightAnsw && attempts < 3) {
-            var numb1 = (int) (Math.random() * 10);
-            var numb2 = (int) (Math.random() * 10);
+        while (rightAnsw && attempts < correctAnsw) {
+            var numb1 = Engine.rnd();
+            var numb2 = Engine.rnd();
 
             int operation = 1 + (int) (Math.random() * ((3 - 1) + 1));
 
@@ -49,7 +52,7 @@ public class CalcGame {
                 Engine.againMessage(exp, playerAnsw);
             }
         }
-        if (attempts == 3) {
+        if (attempts == correctAnsw) {
             Engine.congratulations();
         }
     }

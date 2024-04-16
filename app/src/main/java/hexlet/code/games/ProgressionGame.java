@@ -2,13 +2,15 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import static hexlet.code.Engine.correctAnsw;
+
 public class ProgressionGame {
 
     public static void startGame() {
         Engine.greetings();
         boolean isPlaying = true;
         int attempts = 0;
-        while (isPlaying && attempts < 3) {
+        while (isPlaying && attempts < correctAnsw) {
             System.out.println("What number is missing in the progression?");
             int answ = generateProgression();
             System.out.println("Your answer: ");
@@ -22,16 +24,19 @@ public class ProgressionGame {
                 Engine.againMessage(answ, playerAnsw);
             }
         }
-        if (attempts == 3) {
+
+        if (attempts == correctAnsw) {
             Engine.congratulations();
         }
 
     }
 
     public static int generateProgression() {
-        int step = Engine.rnd(1, 10);
-        int firstNumb = Engine.rnd(0, 10);
-        int index = Engine.rnd(1, 10);
+        int minRange = 1;
+        int maxRange = 10;
+        int step = Engine.rnd(minRange, maxRange);
+        int firstNumb = Engine.rnd();
+        int index = Engine.rnd(minRange, maxRange);
         int rightNumb = 0;
         System.out.print("Question: ");
         for (int i = 1; i < 11; i++) {

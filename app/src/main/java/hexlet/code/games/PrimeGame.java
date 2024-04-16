@@ -2,6 +2,8 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import static hexlet.code.Engine.correctAnsw;
+
 public class PrimeGame {
 
     public static void startGame() {
@@ -9,8 +11,8 @@ public class PrimeGame {
         boolean isPlaying = true;
         int attempts = 0;
 
-        while (isPlaying && attempts < 3) {
-            int numb = Engine.rnd(0, 500);
+        while (isPlaying && attempts < correctAnsw) {
+            int numb = Engine.rnd();
             System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
             System.out.println("Question: " + numb);
             String playerAnsw = Engine.getAnswerString();
@@ -23,7 +25,7 @@ public class PrimeGame {
                 isPlaying = false;
             }
         }
-        if (attempts == 3) {
+        if (attempts == correctAnsw) {
             Engine.congratulations();
         }
 

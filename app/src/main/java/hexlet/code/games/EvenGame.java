@@ -1,6 +1,5 @@
 package hexlet.code.games;
-
-
+import static hexlet.code.Engine.correctAnsw;
 import hexlet.code.Engine;
 
 public class EvenGame {
@@ -12,8 +11,8 @@ public class EvenGame {
         var isAnswright = true;
         var attempts = 0;
 
-        while (isAnswright && attempts < 3) {
-            var numb = (int) (Math.random() * 10);
+        while (isAnswright && attempts < correctAnsw) {
+            var numb = Engine.rnd();
             System.out.println("Question: " + numb);
             System.out.println("Your answer: ");
 
@@ -37,7 +36,7 @@ public class EvenGame {
             }
 
         }
-        if (attempts == 3) {
+        if (attempts == correctAnsw) {
             Engine.congratulations();
         }
     }

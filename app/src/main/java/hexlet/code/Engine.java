@@ -3,7 +3,17 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static String name;
+    private static String name;
+    public final static int correctAnsw = 3;
+    public final static int minRange = 10;
+
+    public static String getName() {
+        return name;
+    }
+
+    public static void setName(String name) {
+        Engine.name = name;
+    }
 
     public static void greetings() {
         Scanner scanner = new Scanner(System.in);
@@ -44,7 +54,7 @@ public class Engine {
     }
 
     public static int rnd() {
-        return (int) (Math.random() * 10);
+        return (int) (Math.random() * minRange);
     }
 
 }

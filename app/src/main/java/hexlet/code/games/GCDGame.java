@@ -1,6 +1,7 @@
 package hexlet.code.games;
-
 import hexlet.code.Engine;
+
+import static hexlet.code.Engine.correctAnsw;
 
 public class GCDGame {
     public static void startGame() {
@@ -8,9 +9,9 @@ public class GCDGame {
         boolean rightAnsw = true;
         int attempts = 0;
 
-        while (rightAnsw && attempts < 3) {
-            int numb1 = (int) (Math.random() * 10);
-            int numb2 = (int) (Math.random() * 10);
+        while (rightAnsw && attempts < correctAnsw) {
+            int numb1 = Engine.rnd();
+            int numb2 = Engine.rnd();
 
             int rightGcd = gcd(numb1, numb2);
 
@@ -30,7 +31,7 @@ public class GCDGame {
             }
 
         }
-        if (attempts == 3) {
+        if (attempts == correctAnsw) {
             Engine.congratulations();
         }
 
