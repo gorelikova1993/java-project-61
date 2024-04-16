@@ -5,6 +5,8 @@ import hexlet.code.Engine;
 import static hexlet.code.Engine.CORRECT_ANSW;
 
 public class CalcGame {
+    private static final int MIN_RANGE = 1;
+    private static final int MAX_RANGE = 3;
 
 
     public static void startGame() {
@@ -16,12 +18,10 @@ public class CalcGame {
         int exp = 0;
 
         while (rightAnsw && attempts < CORRECT_ANSW) {
-            int minRange = 1;
-            int maxRange = 3;
             var numb1 = Engine.rnd();
             var numb2 = Engine.rnd();
 
-            int operation = Engine.rnd(minRange, maxRange);
+            int operation = Engine.rnd(MIN_RANGE, MAX_RANGE);
 
             switch (operation) {
                 case 1:
