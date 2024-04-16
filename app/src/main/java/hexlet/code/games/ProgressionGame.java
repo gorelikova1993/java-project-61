@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.correctAnsw;
+import static hexlet.code.Engine.CORRECT_ANSW;
 
 public class ProgressionGame {
 
@@ -10,7 +10,7 @@ public class ProgressionGame {
         Engine.greetings();
         boolean isPlaying = true;
         int attempts = 0;
-        while (isPlaying && attempts < correctAnsw) {
+        while (isPlaying && attempts < CORRECT_ANSW) {
             System.out.println("What number is missing in the progression?");
             int answ = generateProgression();
             System.out.println("Your answer: ");
@@ -25,7 +25,7 @@ public class ProgressionGame {
             }
         }
 
-        if (attempts == correctAnsw) {
+        if (attempts == CORRECT_ANSW) {
             Engine.congratulations();
         }
 
@@ -39,7 +39,7 @@ public class ProgressionGame {
         int index = Engine.rnd(minRange, maxRange);
         int rightNumb = 0;
         System.out.print("Question: ");
-        for (int i = 1; i < 11; i++) {
+        for (int i = 1; i <= maxRange; i++) {
             if (index == i) {
                 System.out.print(".." + " ");
                 rightNumb = firstNumb;

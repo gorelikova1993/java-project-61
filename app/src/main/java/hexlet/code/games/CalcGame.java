@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.correctAnsw;
+import static hexlet.code.Engine.CORRECT_ANSW;
 
 public class CalcGame {
 
@@ -15,11 +15,13 @@ public class CalcGame {
         var symbol = "";
         int exp = 0;
 
-        while (rightAnsw && attempts < correctAnsw) {
+        while (rightAnsw && attempts < CORRECT_ANSW) {
+            int minRange = 1;
+            int maxRange = 3;
             var numb1 = Engine.rnd();
             var numb2 = Engine.rnd();
 
-            int operation = 1 + (int) (Math.random() * ((3 - 1) + 1));
+            int operation = Engine.rnd(minRange, maxRange);
 
             switch (operation) {
                 case 1:
@@ -52,7 +54,7 @@ public class CalcGame {
                 Engine.againMessage(exp, playerAnsw);
             }
         }
-        if (attempts == correctAnsw) {
+        if (attempts == CORRECT_ANSW) {
             Engine.congratulations();
         }
     }

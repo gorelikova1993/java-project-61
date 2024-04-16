@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 public class Engine {
     private static String name;
-    public final static int correctAnsw = 3;
-    public final static int minRange = 10;
+    private static final int MIN_RANGE = 10;
+    public static final int CORRECT_ANSW = 3;
 
     public static String getName() {
         return name;
     }
 
-    public static void setName(String name) {
-        Engine.name = name;
+    public static void setName(String pName) {
+        Engine.name = pName;
     }
 
     public static void greetings() {
@@ -54,7 +54,7 @@ public class Engine {
     }
 
     public static int rnd() {
-        return (int) (Math.random() * minRange);
+        return (int) (Math.random() * MIN_RANGE);
     }
 
 }
