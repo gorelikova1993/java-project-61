@@ -30,12 +30,16 @@ public class App {
                 break;
             case "3":
                 CalcGame.startGame();
+                break;
             case "4":
                 GCDGame.startGame();
+                break;
             case "5":
                 ProgressionGame.startGame();
+                break;
             case "6":
                 PrimeGame.startGame();
+                break;
             default:
                 break;
         }

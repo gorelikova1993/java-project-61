@@ -10,7 +10,7 @@ public class PrimeGame {
         int attempts = 1;
 
         while (isPlaying && attempts < 4) {
-            int numb = Engine.rnd();
+            int numb = Engine.rnd(0, 500);
             System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
             System.out.println("Question: " + numb);
             String playerAnsw = Engine.getAnswerString();
