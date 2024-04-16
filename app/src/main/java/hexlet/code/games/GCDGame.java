@@ -19,7 +19,7 @@ public class GCDGame {
 
             System.out.println("Your answer: ");
 
-            int playerAnsw = Engine.returnAnswer();
+            int playerAnsw = Engine.getAnswerInt();
 
             if (playerAnsw == rightGcd) {
                 System.out.println("Correct!");

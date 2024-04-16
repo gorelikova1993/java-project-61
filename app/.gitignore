@@ -10,6 +10,9 @@ build/
 # Log file
 *.log
 
+# tutorial
+demo.cast
+
 # Package Files #
 *.jar
 *.war

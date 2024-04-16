@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 public class ProgressionGame {
 
-    public static void startGame(){
+    public static void startGame() {
         Engine.greetings();
         boolean isPlaying = true;
         int attempts = 1;
@@ -12,7 +12,7 @@ public class ProgressionGame {
             System.out.println("What number is missing in the progression?");
             int answ = generateProgression();
             System.out.println("Your answer: ");
-            int playerAnsw = Engine.returnAnswer();
+            int playerAnsw = Engine.getAnswerInt();
 
             if (answ == playerAnsw) {
                 System.out.println("Correct!");
@@ -26,7 +26,7 @@ public class ProgressionGame {
 
     }
 
-    public static int generateProgression(){
+    public static int generateProgression() {
         int step = Engine.rnd(1, 10);
         int firstNumb = Engine.rnd(0, 10);
         int index = Engine.rnd(1, 10);
@@ -39,7 +39,7 @@ public class ProgressionGame {
             } else {
                 System.out.print(firstNumb + " ");
             }
-            firstNumb+=step;
+            firstNumb += step;
         }
         return rightNumb;
     }

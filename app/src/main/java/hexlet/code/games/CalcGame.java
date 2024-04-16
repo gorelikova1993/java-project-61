@@ -31,12 +31,14 @@ public class CalcGame {
                     symbol = "+";
                     exp = numb1 + numb2;
                     break;
+                default:
+                    break;
             }
-            System.out.println("What is the result of the expression?\n" +
-                    "Question: " + numb1 + " " + symbol + " " + numb2);
+            System.out.println("What is the result of the expression?\n"
+                    + "Question: " + numb1 + " " + symbol + " " + numb2);
             System.out.println("Your answer: ");
 
-            int playerAnsw = Engine.returnAnswer();
+            int playerAnsw = Engine.getAnswerInt();
 
 
             if (playerAnsw == exp) {

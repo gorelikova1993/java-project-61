@@ -15,9 +15,14 @@ public class Engine {
         System.out.println("Hello, " + name + "!");
     }
 
-    public static int returnAnswer() {
+    public static int getAnswerInt() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
+    }
+
+    public static String getAnswerString() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.next();
     }
 
     public static void againMessage(int rightAnsw, int badAnsw) {
@@ -25,8 +30,17 @@ public class Engine {
         System.out.println("Let's try again, " + name + "!");
     }
 
+    public static void againMessage(String rightAnsw, String wrongAnsw) {
+        System.out.println("'" + wrongAnsw + "' is wrong answer ;(. Correct answer was '" + rightAnsw + "'");
+        System.out.println("Let's try again, " + name + "!");
+    }
+
     public static int rnd(int min, int max) {
         return min + (int) (Math.random() * ((max - min) + 1));
+    }
+
+    public static int rnd() {
+        return (int) (Math.random() * 10);
     }
 
 }
