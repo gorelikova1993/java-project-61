@@ -6,7 +6,7 @@ import static hexlet.code.Engine.CORRECT_ANSW;
 
 public class ProgressionGame {
     private static final int MIN_RANGE = 1;
-    private static final int MAX_RANGE = 3;
+    private static final int MAX_RANGE = 10;
 
     public static void startGame() {
         Engine.greetings();
