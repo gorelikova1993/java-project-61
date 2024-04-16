@@ -8,6 +8,7 @@ public class Cli {
 
         Scanner scanner = new Scanner(System.in);
         var name = scanner.next();
+        System.out.println("Welcome to the Brain Games!");
         System.out.println("Hello, " + name + "!");
     }
 }
