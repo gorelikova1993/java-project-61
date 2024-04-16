@@ -7,6 +7,7 @@ import static hexlet.code.Engine.CORRECT_ANSW;
 public class CalcGame {
     private static final int MIN_RANGE = 1;
     private static final int MAX_RANGE = 3;
+    private static final int PLUS_SYMBOL = 3;
 
 
     public static void startGame() {
@@ -32,7 +33,7 @@ public class CalcGame {
                     symbol = "-";
                     exp = numb1 - numb2;
                     break;
-                case 3:
+                case PLUS_SYMBOL:
                     symbol = "+";
                     exp = numb1 + numb2;
                     break;
