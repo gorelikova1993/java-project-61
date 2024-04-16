@@ -7,9 +7,9 @@ public class PrimeGame {
     public static void startGame() {
         Engine.greetings();
         boolean isPlaying = true;
-        int attempts = 1;
+        int attempts = 0;
 
-        while (isPlaying && attempts < 4) {
+        while (isPlaying && attempts < 3) {
             int numb = Engine.rnd(0, 500);
             System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
             System.out.println("Question: " + numb);
@@ -23,7 +23,9 @@ public class PrimeGame {
                 isPlaying = false;
             }
         }
-
+        if (attempts == 3) {
+            Engine.congratulations();
+        }
 
     }
 

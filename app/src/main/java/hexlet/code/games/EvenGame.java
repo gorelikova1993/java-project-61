@@ -37,6 +37,9 @@ public class EvenGame {
             }
 
         }
+        if (attempts == 3) {
+            Engine.congratulations();
+        }
     }
 
 }

@@ -7,8 +7,8 @@ public class ProgressionGame {
     public static void startGame() {
         Engine.greetings();
         boolean isPlaying = true;
-        int attempts = 1;
-        while (isPlaying && attempts < 4) {
+        int attempts = 0;
+        while (isPlaying && attempts < 3) {
             System.out.println("What number is missing in the progression?");
             int answ = generateProgression();
             System.out.println("Your answer: ");
@@ -22,7 +22,9 @@ public class ProgressionGame {
                 Engine.againMessage(answ, playerAnsw);
             }
         }
-
+        if (attempts == 3) {
+            Engine.congratulations();
+        }
 
     }
 

@@ -25,6 +25,10 @@ public class Engine {
         return scanner.next();
     }
 
+    public static void congratulations() {
+        System.out.println("Congratulations, " + name + "!");
+    }
+
     public static void againMessage(int rightAnsw, int badAnsw) {
         System.out.println("'" + badAnsw + "' is wrong answer ;(. Correct answer was '" + rightAnsw + "'.");
         System.out.println("Let's try again, " + name + "!");

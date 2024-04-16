@@ -49,5 +49,8 @@ public class CalcGame {
                 Engine.againMessage(exp, playerAnsw);
             }
         }
+        if (attempts == 3) {
+            Engine.congratulations();
+        }
     }
 }

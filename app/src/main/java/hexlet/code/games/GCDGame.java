@@ -6,9 +6,9 @@ public class GCDGame {
     public static void startGame() {
         Engine.greetings();
         boolean rightAnsw = true;
-        int attempts = 1;
+        int attempts = 0;
 
-        while (rightAnsw && attempts < 4) {
+        while (rightAnsw && attempts < 3) {
             int numb1 = (int) (Math.random() * 10);
             int numb2 = (int) (Math.random() * 10);
 
@@ -30,7 +30,9 @@ public class GCDGame {
             }
 
         }
-
+        if (attempts == 3) {
+            Engine.congratulations();
+        }
 
 
     }
