@@ -18,19 +18,19 @@ public class EvenGame {
 
 
             var playerAnsw = Engine.getAnswerString();
-            if (numb % 2 == 0 && playerAnsw.equalsIgnoreCase("yes")) {
+            if (isEven(numb) && playerAnsw.equalsIgnoreCase("yes")) {
                 System.out.println("Correct!");
                 attempts++;
             }
-            if (numb % 2 == 0 && playerAnsw.equalsIgnoreCase("no")) {
+            if (isEven(numb) && playerAnsw.equalsIgnoreCase("no")) {
                 isAnswright = false;
                 Engine.againMessage("yes", "no");
             }
-            if (numb % 2 != 0 && playerAnsw.equalsIgnoreCase("no")) {
+            if (!(isEven(numb)) && playerAnsw.equalsIgnoreCase("no")) {
                 System.out.println("Correct!");
                 attempts++;
             }
-            if (numb % 2 != 0 && playerAnsw.equalsIgnoreCase("yes")) {
+            if (!(isEven(numb)) && playerAnsw.equalsIgnoreCase("yes")) {
                 Engine.againMessage("no", "yes");
                 isAnswright = false;
             }
@@ -39,6 +39,13 @@ public class EvenGame {
         if (attempts == CORRECT_ANSW) {
             Engine.congratulations();
         }
+    }
+
+    public static boolean isEven(int number) {
+        if (number % 2 == 0) {
+            return true;
+        }
+        return false;
     }
 
 }

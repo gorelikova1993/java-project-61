@@ -12,9 +12,12 @@ public class ProgressionGame {
         Engine.greetings();
         boolean isPlaying = true;
         int attempts = 0;
+        int step = Engine.rnd(MIN_RANGE, MAX_RANGE);
+        int firstNumb = Engine.rnd();
+
         while (isPlaying && attempts < CORRECT_ANSW) {
             System.out.println("What number is missing in the progression?");
-            int answ = generateProgression();
+            int answ = generateProgression(MAX_RANGE, step, firstNumb);
             System.out.println("Your answer: ");
             int playerAnsw = Engine.getAnswerInt();
 
@@ -33,13 +36,11 @@ public class ProgressionGame {
 
     }
 
-    public static int generateProgression() {
-        int step = Engine.rnd(MIN_RANGE, MAX_RANGE);
-        int firstNumb = Engine.rnd();
+    public static int generateProgression(int length, int step, int firstNumb) {
         int index = Engine.rnd(MIN_RANGE, MAX_RANGE);
         int rightNumb = 0;
         System.out.print("Question: ");
-        for (int i = 1; i <= MAX_RANGE; i++) {
+        for (int i = 1; i <= length; i++) {
             if (index == i) {
                 System.out.print(".." + " ");
                 rightNumb = firstNumb;
