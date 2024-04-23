@@ -1,0 +1,17 @@
+Index: ../README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>### Hexlet tests and linter status:\n[![Actions Status](https://github.com/gorelikova1993/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/gorelikova1993/java-project-61/actions)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../README.md b/../README.md
+--- a/../README.md	(revision 10471419f9e16cbc1f5cd4f9697dd89fbb390bcb)
++++ b/../README.md	(date 1712812958212)
+@@ -1,2 +1,4 @@
+ ### Hexlet tests and linter status:
+-[![Actions Status](https://github.com/gorelikova1993/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/gorelikova1993/java-project-61/actions)
+\ No newline at end of file
++[![Actions Status](https://github.com/gorelikova1993/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/gorelikova1993/java-project-61/actions)
++
++[![Maintainability](https://api.codeclimate.com/v1/badges/c2ff7b563fbbb2ee194c/maintainability)](https://codeclimate.com/github/gorelikova1993/java-project-61/maintainability)
