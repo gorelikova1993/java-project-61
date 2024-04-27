@@ -3,27 +3,36 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static String name;
     private static final int MIN_RANGE = 10;
-    public static final int CORRECT_ANSW = 3;
+    public static final int ROUNDS = 3;
 
-    public static String getName() {
-        return name;
-    }
 
-    public static void setName(String pName) {
-        Engine.name = pName;
-    }
-
-    public static void greetings() {
+    public static void run(String[][] rounds, String rules) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
+
+        System.out.println(rules);
+
+        for (String[] round : rounds) {
+            System.out.println("Question: " + round[0]);
+            String answer = scanner.next();
+            if (answer.equalsIgnoreCase(round[1])) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
+                        + round[1] + "'");
+                System.out.println("Let's try again, " + userName + "!");
+                return;
+            }
+        }
+        System.out.println("Congratulations, " + userName + "!");
 
 
-        name = scanner.next();
-        System.out.println("Hello, " + name + "!");
     }
+
 
     public static int getAnswerInt() {
         Scanner scanner = new Scanner(System.in);
@@ -35,19 +44,6 @@ public class Engine {
         return scanner.next();
     }
 
-    public static void congratulations() {
-        System.out.println("Congratulations, " + name + "!");
-    }
-
-    public static void againMessage(int rightAnsw, int badAnsw) {
-        System.out.println("'" + badAnsw + "' is wrong answer ;(. Correct answer was '" + rightAnsw + "'.");
-        System.out.println("Let's try again, " + name + "!");
-    }
-
-    public static void againMessage(String rightAnsw, String wrongAnsw) {
-        System.out.println("'" + wrongAnsw + "' is wrong answer ;(. Correct answer was '" + rightAnsw + "'");
-        System.out.println("Let's try again, " + name + "!");
-    }
 
     public static int rnd(int min, int max) {
         return min + (int) (Math.random() * ((max - min) + 1));

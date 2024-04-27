@@ -1,41 +1,25 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.CORRECT_ANSW;
-
 public class GCDGame {
     public static void startGame() {
-        Engine.greetings();
-        boolean rightAnsw = true;
-        int attempts = 0;
+        String rules = "Find the greatest common divisor of given numbers.";
+        var questions = new String[Engine.ROUNDS][];
 
-        while (rightAnsw && attempts < CORRECT_ANSW) {
-            int numb1 = Engine.rnd();
-            int numb2 = Engine.rnd();
-
-            int rightGcd = gcd(numb1, numb2);
-
-            System.out.println("Find the greatest common divisor of given numbers.");
-            System.out.println("Question: " + numb1 + " " + numb2);
-
-            System.out.println("Your answer: ");
-
-            int playerAnsw = Engine.getAnswerInt();
-
-            if (playerAnsw == rightGcd) {
-                System.out.println("Correct!");
-                attempts++;
-            } else {
-                rightAnsw = false;
-                Engine.againMessage(rightGcd, playerAnsw);
-            }
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+            questions[i] = generateRound();
 
         }
-        if (attempts == CORRECT_ANSW) {
-            Engine.congratulations();
-        }
+        Engine.run(questions, rules);
+    }
 
+    private static String[] generateRound() {
+        int numb1 = Engine.rnd();
+        int numb2 = Engine.rnd();
 
+        int rightGcd = gcd(numb1, numb2);
+        var question = numb1 + " " + numb2;
+        return new String[]{question, String.valueOf(rightGcd)};
     }
 
     public static int gcd(int a, int b) {

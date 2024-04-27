@@ -2,53 +2,50 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.CORRECT_ANSW;
 
 public class ProgressionGame {
     private static final int MIN_RANGE = 1;
     private static final int MAX_RANGE = 10;
 
     public static void startGame() {
-        Engine.greetings();
-        boolean isPlaying = true;
-        int attempts = 0;
+        String rules = "What number is missing in the progression?";
+        var questions = new String[Engine.ROUNDS][];
+
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+            questions[i] = generateRound();
+        }
+        Engine.run(questions, rules);
+    }
+
+    private static String[] generateRound() {
         int step = Engine.rnd(MIN_RANGE, MAX_RANGE);
         int firstNumb = Engine.rnd();
-
-        while (isPlaying && attempts < CORRECT_ANSW) {
-            System.out.println("What number is missing in the progression?");
-            int answ = generateProgression(MAX_RANGE, step, firstNumb);
-            System.out.println("Your answer: ");
-            int playerAnsw = Engine.getAnswerInt();
-
-            if (answ == playerAnsw) {
-                System.out.println("Correct!");
-                attempts++;
-            } else {
-                isPlaying = false;
-                Engine.againMessage(answ, playerAnsw);
-            }
-        }
-
-        if (attempts == CORRECT_ANSW) {
-            Engine.congratulations();
-        }
+        int index = Engine.rnd();
+        int[] progression = generateProgression(MAX_RANGE, step, firstNumb);
+        int rightAnswer = progression[index];
+        var question = intProgressionToString(progression, index);
+        return new String[]{question, String.valueOf(rightAnswer)};
 
     }
 
-    public static int generateProgression(int length, int step, int firstNumb) {
-        int index = Engine.rnd(MIN_RANGE, MAX_RANGE);
-        int rightNumb = 0;
-        System.out.print("Question: ");
-        for (int i = 1; i <= length; i++) {
-            if (index == i) {
-                System.out.print(".." + " ");
-                rightNumb = firstNumb;
-            } else {
-                System.out.print(firstNumb + " ");
-            }
+    public static int[] generateProgression(int length, int step, int firstNumb) {
+        var numbers = new int[length];
+        for (int i = 0; i < length; i++) {
+            numbers[i] = firstNumb;
             firstNumb += step;
         }
-        return rightNumb;
+        return numbers;
+    }
+
+    private static String intProgressionToString(int[] numbers, int index) {
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < numbers.length; i++) {
+            if (i == index) {
+                str.append("..").append(" ");
+            } else {
+                str.append(numbers[i]).append(" ");
+            }
+        }
+        return str.toString();
     }
 }
