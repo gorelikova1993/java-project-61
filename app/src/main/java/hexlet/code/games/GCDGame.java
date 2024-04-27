@@ -8,7 +8,6 @@ public class GCDGame {
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
             questions[i] = generateRound();
-
         }
         Engine.run(questions, rules);
     }

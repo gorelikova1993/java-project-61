@@ -2,7 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-
 public class ProgressionGame {
     private static final int MIN_RANGE = 1;
     private static final int MAX_RANGE = 10;
@@ -25,7 +24,6 @@ public class ProgressionGame {
         int rightAnswer = progression[index];
         var question = intProgressionToString(progression, index);
         return new String[]{question, String.valueOf(rightAnswer)};
-
     }
 
     public static int[] generateProgression(int length, int step, int firstNumb) {

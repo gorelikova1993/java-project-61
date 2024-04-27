@@ -29,21 +29,7 @@ public class Engine {
             }
         }
         System.out.println("Congratulations, " + userName + "!");
-
-
     }
-
-
-    public static int getAnswerInt() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
-    }
-
-    public static String getAnswerString() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.next();
-    }
-
 
     public static int rnd(int min, int max) {
         return min + (int) (Math.random() * ((max - min) + 1));
@@ -52,5 +38,4 @@ public class Engine {
     public static int rnd() {
         return (int) (Math.random() * MIN_RANGE);
     }
-
 }
