@@ -6,16 +6,16 @@ public class CalcGame {
     private static final int MIN_RANGE = 0;
     private static final int MAX_RANGE = 2;
     private static final String[] SYMBOLS = {"*", "-", "+"};
+    private static final String RULES = "What is the result of the expression?";
 
 
     public static void startGame() {
-        String rules = "What is the result of the expression?";
         var questions = new String[Engine.ROUNDS][];
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
             questions[i] = generateRound();
         }
-        Engine.run(questions, rules);
+        Engine.run(questions, RULES);
     }
 
     private static String[] generateRound() {
@@ -32,7 +32,7 @@ public class CalcGame {
 
 
 
-    public static int solveExpression(int operation, int numb1, int numb2) {
+    public static Object solveExpression(int operation, int numb1, int numb2) {
         var exp = 0;
 
         switch (operation) {
@@ -46,7 +46,7 @@ public class CalcGame {
                 exp = numb1 + numb2;
                 break;
             default:
-                break;
+                return null;
         }
         return exp;
     }

@@ -5,15 +5,15 @@ import hexlet.code.Engine;
 public class ProgressionGame {
     private static final int MIN_RANGE = 1;
     private static final int MAX_RANGE = 10;
+    private static final String RULES = "What number is missing in the progression?";
 
     public static void startGame() {
-        String rules = "What number is missing in the progression?";
         var questions = new String[Engine.ROUNDS][];
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
             questions[i] = generateRound();
         }
-        Engine.run(questions, rules);
+        Engine.run(questions, RULES);
     }
 
     private static String[] generateRound() {

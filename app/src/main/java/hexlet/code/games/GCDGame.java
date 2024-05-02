@@ -2,14 +2,14 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class GCDGame {
-    public static void startGame() {
-        String rules = "Find the greatest common divisor of given numbers.";
-        var questions = new String[Engine.ROUNDS][];
+    private static final String RULES = "Find the greatest common divisor of given numbers.";
 
+    public static void startGame() {
+        var questions = new String[Engine.ROUNDS][];
         for (int i = 0; i < Engine.ROUNDS; i++) {
             questions[i] = generateRound();
         }
-        Engine.run(questions, rules);
+        Engine.run(questions, RULES);
     }
 
     private static String[] generateRound() {
